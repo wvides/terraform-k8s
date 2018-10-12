@@ -1,0 +1,1 @@
+# t2.micro", "us-east-1", "prometheus-server"
