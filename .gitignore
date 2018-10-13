@@ -1,6 +1,6 @@
 **/.terraform/*
 .terraform
-
+terraform.tfvars
 # .tfstate files
 *.tfstate
 *.tfstate.*
