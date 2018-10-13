@@ -24,8 +24,9 @@ resource "google_container_node_pool" "node_pool" {
 }
 
 resource "google_container_cluster" "cluster" {
-  name = "${var.cluster_name}"
-  zone = "${var.zone}"
+  name               = "${var.cluster_name}"
+  zone               = "${var.zone}"
+  initial_node_count = 3
 
   master_auth {
     username = "${var.master_node_username}"

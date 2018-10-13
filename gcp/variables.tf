@@ -4,12 +4,10 @@ variable "project_id" {
 
 variable "master_node_password" {
   description = "A password to access the cluster master"
-  default     = "root"
 }
 
 variable "master_node_username" {
   description = "A username to access the cluster master"
-  default     = "root"
 }
 
 variable "preemptible" {
