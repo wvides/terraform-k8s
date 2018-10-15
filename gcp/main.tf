@@ -4,25 +4,6 @@ provider "google" {
   region      = "us-central1"
 }
 
-resource "google_container_node_pool" "node_pool" {
-  name       = "${var.node_pool_name}"
-  zone       = "${var.zone}"
-  cluster    = "${google_container_cluster.cluster.name}"
-  node_count = 3
-
-  node_config {
-    preemptible  = true
-    machine_type = "${var.machine_type}"
-
-    oauth_scopes = [
-      "compute-rw",
-      "storage-ro",
-      "logging-write",
-      "monitoring",
-    ]
-  }
-}
-
 resource "google_container_cluster" "cluster" {
   name               = "${var.cluster_name}"
   zone               = "${var.zone}"
@@ -34,6 +15,15 @@ resource "google_container_cluster" "cluster" {
   }
 
   node_config {
+    preemptible  = true
+    machine_type = "${var.machine_type}"
+
+    oauth_scopes = [
+      "compute-rw",
+      "storage-ro",
+      "logging-write",
+      "monitoring",
+    ]
     oauth_scopes = [
       "https://www.googleapis.com/auth/compute",
       "https://www.googleapis.com/auth/devstorage.read_only",

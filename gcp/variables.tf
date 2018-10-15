@@ -27,10 +27,6 @@ variable "zone" {
   default = "us-central1-a"
 }
 
-variable "node_pool_name" {
-  default = "staging_node_pool"
-}
-
 variable "machine_type" {
   default = "n1-standard-1"
 }
